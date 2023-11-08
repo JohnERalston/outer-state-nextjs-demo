@@ -1,8 +1,6 @@
-import { blogState } from './blogState';
 
-export const BlogList = () => {
-  const { blogs } = blogState.useStore();
 
+export const BlogList = (blogs) => {
   return (
     <div>
       <table>

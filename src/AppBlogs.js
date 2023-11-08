@@ -2,17 +2,20 @@
 
 import { BlogList } from './BlogList';
 import { FilterField } from './FilterField';
-import { useBlogStateHydrator } from './useBlogStateHydrater';
+import { blogState, blogStateApi } from './blogState';
 
 export function AppBlogs(props) {
-  useBlogStateHydrator(props.blogs);
+  const { blogs } = blogState.useStore({
+    blogs: [...props.blogs],
+    originalBlogList: [...props.blogs],
+  });
 
   return (
     <div>
       <div className="mb-1">
-        <FilterField />
+        <FilterField onFilter={blogStateApi.ffilterBlogs} />
       </div>
-      <BlogList />
+      <BlogList blogs={blogs} />
     </div>
   );
 }

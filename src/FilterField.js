@@ -1,19 +1,9 @@
-import { blogState } from './blogState';
-
-const filterList = (filter) => {
-  const { originalBlogList } = blogState.data();
-  const filteredBlogs = originalBlogList.filter(({ title }) =>
-    title.includes(filter)
-  );
-  blogState.updateStore({ blogs: filteredBlogs });
-};
-
-export const FilterField = () => {
+export const FilterField = (onFilter) => {
   return (
     <div>
       <label>
         Filter Blogs:{' '}
-        <input type="text" onChange={(e) => filterList(e.target.value)} />
+        <input type="text" onChange={(e) => onFilter(e.target.value)} />
       </label>
     </div>
   );
