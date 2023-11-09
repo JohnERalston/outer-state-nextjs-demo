@@ -2,7 +2,7 @@ import { createStore } from 'outer-state';
 
 export const blogState = createStore({ blogs: [], originalBlogList: [] });
 
-export function blogStateApi() {
+function blogStateApiImpl() {
   const filterBlogs = (filter) => {
     const { originalBlogList } = blogState.data();
     const filteredBlogs = originalBlogList.filter(({ title }) =>
@@ -15,3 +15,5 @@ export function blogStateApi() {
     filterBlogs,
   };
 }
+
+export const blogStateApi = blogStateApiImpl();

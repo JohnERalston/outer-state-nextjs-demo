@@ -13,7 +13,7 @@ export function AppBlogs(props) {
   return (
     <div>
       <div className="mb-1">
-        <FilterField onFilter={blogStateApi.ffilterBlogs} />
+        <FilterField onFilter={blogStateApi.filterBlogs} />
       </div>
       <BlogList blogs={blogs} />
     </div>

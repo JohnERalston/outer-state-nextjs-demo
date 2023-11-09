@@ -1,6 +1,4 @@
-
-
-export const BlogList = (blogs) => {
+export const BlogList = ({ blogs }) => {
   return (
     <div>
       <table>

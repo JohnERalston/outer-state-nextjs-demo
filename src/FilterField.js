@@ -1,4 +1,4 @@
-export const FilterField = (onFilter) => {
+export const FilterField = ({ onFilter }) => {
   return (
     <div>
       <label>
